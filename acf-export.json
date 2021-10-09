@@ -1,0 +1,178 @@
+[
+    {
+        "key": "group_613ff45b236f1",
+        "title": "Background Color Palette",
+        "fields": [
+            {
+                "key": "field_613ff46219a13",
+                "label": "Foreground Color",
+                "name": "foreground_color",
+                "type": "color_picker",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "enable_opacity": 0,
+                "return_format": "string"
+            },
+            {
+                "key": "field_613ff48719a14",
+                "label": "Background Color",
+                "name": "background_color",
+                "type": "color_picker",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "enable_opacity": 0,
+                "return_format": "string"
+            },
+            {
+                "key": "field_613ff4afa04e7",
+                "label": "Text Color",
+                "name": "text_color",
+                "type": "radio",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "black": "Dark (default)",
+                    "white": "Light"
+                },
+                "allow_null": 0,
+                "other_choice": 0,
+                "default_value": "white",
+                "layout": "horizontal",
+                "return_format": "value",
+                "save_other_choice": 0
+            },
+            {
+                "key": "field_6140368ade6ad",
+                "label": "Advanced Options",
+                "name": "",
+                "type": "message",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "message": "",
+                "new_lines": "wpautop",
+                "esc_html": 0
+            },
+            {
+                "key": "field_614036c3e0127",
+                "label": "Foreground Blend Mode",
+                "name": "foreground_blend_mode",
+                "type": "select",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "normal": "normal",
+                    "multiply": "multiply",
+                    "screen": "screen",
+                    "overlay": "overlay",
+                    "darken": "darken",
+                    "lighten": "lighten",
+                    "color-dodge": "color dodge",
+                    "color-burn": "color burn",
+                    "difference": "difference",
+                    "exclusion": "exclusion",
+                    "hard-light": "hard light",
+                    "hue": "hue",
+                    "saturation": "saturation",
+                    "soft-light": "soft light",
+                    "color": "color",
+                    "luminosity": "luminosity"
+                },
+                "default_value": "lighten",
+                "allow_null": 0,
+                "multiple": 0,
+                "ui": 0,
+                "return_format": "value",
+                "ajax": 0,
+                "placeholder": ""
+            },
+            {
+                "key": "field_614036e0e0128",
+                "label": "Background Blend Mode",
+                "name": "background_blend_mode",
+                "type": "select",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "normal": "normal",
+                    "multiply": "multiply",
+                    "screen": "screen",
+                    "overlay": "overlay",
+                    "darken": "darken",
+                    "lighten": "lighten",
+                    "color-dodge": "color dodge",
+                    "color-burn": "color burn",
+                    "difference": "difference",
+                    "exclusion": "exclusion",
+                    "hard-light": "hard light",
+                    "hue": "hue",
+                    "saturation": "saturation",
+                    "soft-light": "soft light",
+                    "color": "color",
+                    "luminosity": "luminosity"
+                },
+                "default_value": "multiply",
+                "allow_null": 0,
+                "multiple": 0,
+                "ui": 0,
+                "return_format": "value",
+                "ajax": 0,
+                "placeholder": ""
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "page"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "side",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": ""
+    }
+]
