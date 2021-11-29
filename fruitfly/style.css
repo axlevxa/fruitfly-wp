@@ -65,9 +65,28 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 
 }
 
+@font-face {
+    font-family: 'mavenpro';
+    src: url('fonts/mavenpro-regular-webfont.woff2') format('woff2'),
+         url('fonts/mavenpro-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'mavenpro';
+    src: url('fonts/mavenpro-bold-webfont.woff2') format('woff2'),
+         url('fonts/mavenpro-bold-webfont.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
 /*--------------------------------------------------------------
 # Fruitfly Styles
 --------------------------------------------------------------*/
+body {
+  font-family: 'mavenpro';
+}
 ::-moz-selection { /* Code for Firefox */
  color: #e619a1;
  background: #e0e2e7;
@@ -76,6 +95,11 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 ::selection {
   color: #e0e2e7;
   background: #e619a1;
+}
+
+:focus {
+	outline: .125rem solid #ffd11b;
+	outline-offset: .125rem;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -90,13 +114,18 @@ h2 {
 }
 
 #header-quickinfo {
-	display: flex;
-	padding-top: 10px;
-	padding-bottom: 10px;
+  background-color: #171a1c;
+	padding-top: 4px;
+	padding-bottom: 4px;
+  margin-bottom: 14px;
+}
+#header-quickinfo .container {
+  display: flex;
 }
 #header-quickinfo p {
 	font-size: 1.2em;
 	font-family: 'futurarenner';
+  color: #fff;
 }
 #header-quickinfo a {
 	text-decoration: none;
@@ -117,7 +146,7 @@ h2 {
 }
 
 main {
-	width: 960px;
+  min-width: 1008px;
 	background: #fff;
 	padding: 1.4rem;
 	border-radius: 14px;
@@ -128,7 +157,7 @@ main {
 	max-width: 250px;
 	min-width: 240px;
   padding: 1.4rem;
-  background-color: #000;
+  background-color: #171a1c;
   color: #fff;
   margin-top: 50px;
   border-top-right-radius: 14px;
@@ -220,14 +249,19 @@ template {
     height: auto;
 }
 
+.site-description, .site-title {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
 .main-navigation {
 	display: block;
 	width: 100%;
-  margin-top: 30px;
+  margin-top: 10px;
 }
 
 #primary-menu {
-  margin-left: 35px;
+  margin-left: 15px;
   margin-right: 8px;
 }
 
@@ -237,6 +271,13 @@ template {
   margin-bottom: 0px;
   padding: 10px;
   line-height: 120%;
+  font-family: 'futurarenner';
+  font-size: 1.4em;
+}
+
+#primary-menu > li {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
 .main-navigation ul {
@@ -254,7 +295,9 @@ template {
 	left: -999em;
 	z-index: 99999;
   background-color: #000;
-  border-radius: 8px;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
   color: #fff;
 }
 
@@ -262,18 +305,17 @@ template {
   margin: 0;
 }
 
-.main-navigation ul ul li:hover a:after {
-  content: "\f344";
-  font-family: 'dashicons';
-  vertical-align: middle;
-  font-size: 1em;
-  line-height: 100%;
-  margin-left: 4px;
-  display: inline;
+.main-navigation ul ul li:hover {
+  text-decoration: underline;
 }
 
 .main-navigation .sub-menu {
   display: block;
+}
+
+#primary-menu > .menu-item:hover {
+  background-color: #000;
+  color: #fff;
 }
 
 .main-navigation ul ul ul {
@@ -293,7 +335,7 @@ template {
 
 .main-navigation ul li:hover > ul,
 .main-navigation ul li.focus > ul {
-	left: auto;
+	left: 0px;
 }
 
 .main-navigation li {
@@ -305,21 +347,10 @@ template {
 	text-decoration: none;
 }
 
-.current_page_item > a {
-  font-weight: 700;
-}
-
 #primary-menu > .current_page_item,
 #primary-menu > .current-menu-ancestor {
   background-color: #fff;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
   color: #000;
-}
-
-#primary-menu > li:last-of-type:hover ul {
-  right: 0px;
-  left: auto;
 }
 
 /* Small menu. */
@@ -368,11 +399,17 @@ template {
 @media (max-width: 1280px) {
   #primary-menu {
     margin-bottom: 10px;
-    margin-left: 15px;
+    margin-left: 0px;
   }
-  #primary-menu > .current_page_item,
-  #primary-menu > .current-menu-ancestor {
+  #primary-menu li {
     border-radius: 10px;
+  }
+  main {
+    min-width: auto;
+  }
+  #primary-menu > .menu-item.menu-item-has-children {
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
   }
 }
 
@@ -392,11 +429,14 @@ template {
     width: 100px;
     height: 100px;
     color: #fff !important;
-    background: #000 !important;
+    background: #000;
     border-radius: 50px;
     right: 30px;
     transition: 1s all;
     overflow: hidden;
+    background-image:url('img/circle-a.png');
+    background-size: 105%;
+    background-position: center center;
   }
   button.menu-toggle:hover {
     transform: rotate(45deg);
@@ -649,4 +689,34 @@ h2.list-title {
 }
 .error404 .search-submit {
   color: #000;
+}
+
+/* Latest Posts
+--------------------------------------------- */
+.fruitfly-latestposts {
+  background-color: #bf691d;
+  padding: 10px;
+}
+.fruitfly-latestposts-header {
+  color: #fff;
+  margin-bottom: 0px;
+  padding: 10px 0px 10px 10px;
+  text-transform: uppercase;
+  border-bottom: 1px solid #fff;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+.fruitfly-latestposts-widget {
+  padding: 20px 10px 10px 10px !important;
+  margin-top: 0px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.fruitfly-latestposts-widget li {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  padding: 10px;
 }
