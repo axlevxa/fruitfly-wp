@@ -178,11 +178,3 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
-
-/**
- * Load Dashicons for front-end users.
- */
-function ww_load_dashicons(){
-    wp_enqueue_style('dashicons');
-}
-add_action('wp_enqueue_scripts', 'ww_load_dashicons');
